@@ -1,0 +1,78 @@
+basePath: /api/v1/
+host: localhost:8080
+info:
+  contact: {}
+  description: In memory key-value store
+  title: GOAPP API documentation
+  version: 1.0.0
+paths:
+  /my/keys:
+    delete:
+      description: delete all
+      responses:
+        "204":
+          description: ""
+        "404":
+          description: ""
+        "405":
+          description: ""
+        "415":
+          description: ""
+        "500":
+          description: ""
+      summary: Delete All
+      tags:
+      - GoApp
+    post:
+      consumes:
+      - application/json
+      description: create
+      parameters:
+      - description: Pair
+        in: body
+        name: pair
+        required: true
+        schema:
+          additionalProperties:
+            type: string
+          type: object
+      responses:
+        "201":
+          description: ""
+        "404":
+          description: ""
+        "405":
+          description: ""
+        "415":
+          description: ""
+        "500":
+          description: ""
+      summary: Create a new pair or update existing
+      tags:
+      - GoApp
+  /my/keys/{key}:
+    get:
+      description: get pair
+      parameters:
+      - description: key
+        in: path
+        name: key
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "404":
+          description: ""
+        "405":
+          description: ""
+        "415":
+          description: ""
+        "500":
+          description: ""
+      summary: Get pair
+      tags:
+      - GoApp
+swagger: "2.0"

@@ -1,0 +1,118 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "In memory key-value store",
+        "title": "GOAPP API documentation",
+        "contact": {},
+        "version": "1.0.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/api/v1/",
+    "paths": {
+        "/my/keys": {
+            "post": {
+                "description": "create",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "GoApp"
+                ],
+                "summary": "Create a new pair or update existing",
+                "parameters": [
+                    {
+                        "description": "Pair",
+                        "name": "pair",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": ""
+                    },
+                    "404": {
+                        "description": ""
+                    },
+                    "405": {
+                        "description": ""
+                    },
+                    "415": {
+                        "description": ""
+                    },
+                    "500": {
+                        "description": ""
+                    }
+                }
+            },
+            "delete": {
+                "description": "delete all",
+                "tags": [
+                    "GoApp"
+                ],
+                "summary": "Delete All",
+                "responses": {
+                    "204": {
+                        "description": ""
+                    },
+                    "404": {
+                        "description": ""
+                    },
+                    "405": {
+                        "description": ""
+                    },
+                    "415": {
+                        "description": ""
+                    },
+                    "500": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/my/keys/{key}": {
+            "get": {
+                "description": "get pair",
+                "tags": [
+                    "GoApp"
+                ],
+                "summary": "Get pair",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "key",
+                        "name": "key",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "404": {
+                        "description": ""
+                    },
+                    "405": {
+                        "description": ""
+                    },
+                    "415": {
+                        "description": ""
+                    },
+                    "500": {
+                        "description": ""
+                    }
+                }
+            }
+        }
+    }
+}
